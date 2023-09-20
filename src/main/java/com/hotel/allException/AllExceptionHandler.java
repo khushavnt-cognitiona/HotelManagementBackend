@@ -12,5 +12,10 @@ public class AllExceptionHandler {
 		return new ResponseEntity<String>(notFondException.getLocalizedMessage(),HttpStatus.NOT_FOUND);
 		
 	}
+	@ExceptionHandler(FormatNotMatchException.class)
+	public ResponseEntity<String>FormatNotMatchExceptionHandler(FormatNotMatchException formatNotMatchException) {
+		
+		return new ResponseEntity<String>(formatNotMatchException.getLocalizedMessage(),HttpStatus.BAD_REQUEST);
+	}
 
 }
